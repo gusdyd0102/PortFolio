@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Portfolio</title>
+    <style>
+        :root {
+            --primary-color: #333633;
+            --secondary-color: #333;
+            --background-color: #f4f4f4;
+            --text-color: #555;
+            --font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--font-family);
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        section h2 {
+            color: var(--secondary-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .about-content img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            justify-self: center;
+        }
+
+        .about-text {
+            display: grid;
+            grid-template-rows: auto auto;
+            gap: 1rem;
+        }
+
+        .about-text h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .about-text h4 {
+            margin: 0;
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+
+        .projects {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .project {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background: var(--background-color);
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .project img {
+            width:50%;
+            border-radius: 4px;
+        }
+
+        .project-description {
+            text-align: left;
+        }
+
+        .project-description h3 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-description p {
+            margin: 0;
+        }
+
+        .progress-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .progress-bar {
+            width: 150px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+            height: 20px;
+        }
+
+        .progress-bar-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .progress-bar span {
+            display: block;
+            height: 100%;
+            background-color: var(--primary-color);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .progress-bar[data-label]::after {
+            content: attr(data-label);
+            position: absolute;
+            right: 10px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            font-size: 0.8rem;
+            color: white;
+        }
+
+        .tech-stack {
+            text-align: left;
+        }
+
+        .tech-stack h3 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-stack ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .tech-stack ul li {
+            background: #e0e0e0;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            border-radius: 4px;
+        }
+
+        .project-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .stack-section {
+            margin-top: 2rem;
+        }
+
+        .stack-section ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .stack-section ul li {
+            background: #ddd;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: var(--secondary-color);
+            color: white;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        
+    </header>
+
+    <section id="about">
+        <div class="about-content">
+            <img src="img\KakaoTalk_20250112_232107610.jpg" alt="Profile Picture">
+            <div class="about-text">
+                <h3>안녕하세요 백엔드 개발자 김현용입니다.</h3>
+                <h4>저는 Spring과 DB를 다루는 것에 자신 있습니다. 데이터를 어떻게 하면 효율적으로 다루고 문제들을 해결할 수 있을지 항상 고민하는 개발자입니다. DB설계, Git과 GitHub를 활용한 스크럼 마스터, AWS를 활용한 배포까지 경험해봤습니다.</h4>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div>
+            <h2>license</h2>
+            <ul>
+                <li>
+                    <p>정보처리기사</p>
+                </li>
+                <li>
+                    <p>정보처리산업기사</p>
+                </li>
+                <li>
+                    <p>SQLD</p>
+                </li>
+                <li>
+                    <p>네트워크 관리사 2급</p>
+                </li>
+                <li>
+                    <p>컴퓨터 활용능력 1급</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+    <section id="projects">
+        <h2>Project</h2>
+        <div class="projects">
+            <div class="project">
+                <h3>국내 여행 플래너</h3>
+                <img src="img\화면 캡처 2025-01-12 234921.png" alt="Project Thumbnail">
+                <div class="project-details">
+                    <div class="project-description">
+                        <h3>Description</h3>
+                        <p>5명의 팀원으로 구성되어 진행한 프로젝트입니다. 저는 주로 기획과 전반적인 모든 백엔드를 담당했습니다. 다루는 데이터가 크고 많아 효율적인 방법을 고민하고 React를 활용했기에 좋은 UI,UX로 개발하기 위해 애쓴 경험이 되던 프로젝트였습니다. </p>
+                        <h3>Contribution</h3>
+                        <div class="progress-bars">
+                            <div class="progress-bar-container">
+                                <span>BackEnd</span>
+                                <div class="progress-bar" data-label="80%">
+                                    <span style="width: 80%;"></span>
+                                </div>
+                            </div>
+                            <div class="progress-bar-container">
+                                <span>FrontEnd</span>
+                                <div class="progress-bar" data-label="30%">
+                                    <span style="width: 30%;"></span>
+                                </div>
+                            </div>
+                            <div class="progress-bar-container">
+                                <span>DataBase</span>
+                                <div class="progress-bar" data-label="100%">
+                                    <span style="width: 100%;"></span>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>
+                                    <p>유저관리,로그인을 제외한 BackEnd 구현</p>
+                                </li>
+                                <li>
+                                    <p>React에서 Axios, 지도와 경로 관련 데이터 다루고 렌더링하는 부분 구현</p>
+                                </li>
+                                <li>
+                                    <p>테이블,제약조건 등 DB전체 설계</p>
+                                </li>
+                                <li>
+                                    <p>React Hook을 적절히 사용하여 UX에 좋게 설계하고 구현</p>
+                                </li>
+                                <li>
+                                    <p>BackEnd,FrontEnd,DB에서 각각 데이터를 편하고 효율적으로 다룰 수 있게 데이터를 가공하거나 직렬화하고 파싱하는 방법 사용</p>
+                                </li>
+                            </ul>
+                            <h3>Trouble Shooting</h3>
+                            <ul>
+                                <li>
+                                    <p>경로 데이터의 크기가 커 저장이 불가하다고 생각하여 변수나 DB에 저장하지 않고 사용자의 동작에 맞게 필요할 때마다 요청해서 렌더링</p>
+                                </li>
+                                <li>
+                                    <p>Spring JPA에서 Cascade 옵션을 주었으나 생성된 제약조건에서 반영이 되지 않아 직접 제약조건 변경</p>
+                                </li>
+                                <li>
+                                    <p>여행,체크리스트 그리고 지도 관련 데이터를 하나의 버튼으로 3가지 Axios 요청이 가능하도록 데이터들을 다룸</p>
+                                </li>
+                            </ul>
+                        <h3>Links</h3>
+                        <a href="http://ittrip.life">웹 바로가기</a>
+                        
+                        <a href="https://github.com/gusdyd0102/groupProject_ittrip">깃허브 Repo 바로가기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stack" class="stack-section">
+        <h2>Tech Stack</h2>
+        <ul>
+            <li>JAVA</li>
+            <li>Spring Boot</li>
+            <li>React</li>
+            <li>React Native</li>
+            <li>MySQL</li>
+            <li>JavaScript</li>
+            <li>Node.js</li>
+            <li>AWS</li>
+            <li>Docker</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <a href="https://github.com/gusdyd0102">Git Hub</a>
+        <p>010-3062-6126</p>
+        <p>gusdyd0102@gmail.com</p>
+    </section>
+
+    <footer>
+        
+    </footer>
+</body>
+</html>
